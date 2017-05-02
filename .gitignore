@@ -12,3 +12,4 @@ result/
 
 # Remove R related files
 .Rhistory
+.csv
