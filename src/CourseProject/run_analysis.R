@@ -123,4 +123,4 @@ if (!dir.exists("../../result")) {
     dir.create("../../result")
 }
 
-write.table(result_data, file = "../../result/analysis_result.csv", sep = ",")
+write.table(result_data, file = "../../result/analysis_result.txt", sep = ",")

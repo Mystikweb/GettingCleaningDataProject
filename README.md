@@ -21,6 +21,6 @@ This repository is stuctured similar to most other projects I have done, the bre
     |- CourseProject.sln
 
 ### Execution
-The resulting output is created by sourcing the `run_analysis.R` file which performs all of the required steps to produce the output file called `analysis_result.csv` that is located in a `result` folder at the root of the repository.
+The resulting output is created by sourcing the `run_analysis.R` file which performs all of the required steps to produce the output file called `analysis_result.txt` that is located in a `result` folder at the root of the repository.
 
 __*NOTE:*__ If you make any changes to the script this folder will be ignored by default during the commit.

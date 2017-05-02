@@ -1,7 +1,7 @@
 # Coursera Getting and Cleaning Data Course Project Code Book
 
 ## Summary
-The purpose of this guide is to provide the information to understand how the `run_analysis.R` file works and the expected output of the `analysis_result.csv` file.
+The purpose of this guide is to provide the information to understand how the `run_analysis.R` file works and the expected output of the `analysis_result.txt` file.
 ***
 ### Variable Naming Convention
 There are many variables names that signify different measurements taeken in the data set. This table list of the naming conventions to help identify the columns.
@@ -38,5 +38,5 @@ The code is commented with detailed descriptions of each step but the basic proc
 12. Combine all of the rows from both the test and training data sets into a merged set
     * *__NOTE__ This result will take you to step 4 of the requirements*
 13. Using the `dplyr` library group the merged data by subject and activity and get the average for each measurement
-14. Write out the results to the `analysis_result.csv` file
+14. Write out the results to the `analysis_result.txt` file
     * *__NOTE__ This result will take you to step 5 of the requirements*
