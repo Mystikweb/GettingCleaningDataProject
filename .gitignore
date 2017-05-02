@@ -7,8 +7,8 @@
 # Visual Studio 2015 cache/options directory
 .vs/
 
-# Remove data directory
-data/
+# Remove output directory
+result/
 
 # Remove R related files
 .Rhistory

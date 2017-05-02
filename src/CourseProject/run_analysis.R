@@ -112,27 +112,15 @@ train_data <- cbind(train_subject_data, ACTIVITY_NAME = train_activity_data$ACTI
 # Merge all the rows into a resulting dataset
 merged_data <- rbind(test_data, train_data)
 
+# Bring in the dplyr library to summarize the merged data
+library(dplyr)
 
+# Group the data by subject and activiy and get the average for each of the measurements
+result_data <- merged_data %>% group_by(SUBJECT_ID,ACTIVITY_NAME) %>% summarise_each(funs(mean))
 
-distinct_subjects <- unique(merged_data$SUBJECT_ID)
-column_names <- column_list[column_list != "NULL"]
-
-result_data <- data.frame()
-for (subject in distinct_subjects) {
-    for (activity in activity_label_data$ACTIVITY_NAME) {
-
-        activity_result <- cbind(SUBJECT_ID = c(subject), ACTIVITY_NAME = c(activity))
-
-        grouped_data <- merged_data[merged_data$SUBJECT_ID == subject && merged_data$ACTIVITY_NAME == activity,]
-
-        for (column in column_names) {
-            if (nrow(grouped_data) > 0) {
-                activity_result <- cbind(activity_result, c(mean(grouped_data[, column], na.rm = TRUE)))
-            } else {
-                activity_result <- cbind(activity_result, c(NA))
-            }
-        }
-
-        result_data <- rbind(result_data, activity_result)
-    }
+# Finally write the results to a result folder located in the root of the repo
+if (!dir.exists("../../result")) {
+    dir.create("../../result")
 }
+
+write.table(result_data, file = "../../result/analysis_result.csv", sep = ",")
